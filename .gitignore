@@ -1,0 +1,7 @@
+.*/
+*.log
+**/*.rs.bk
+Cargo.lock
+/target
+/node_modules
+/wasm_bindgen
