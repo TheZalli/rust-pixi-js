@@ -22,6 +22,7 @@ extern {
 
 #[wasm_bindgen]
 extern {
+    /// Print to developer console
     #[wasm_bindgen(js_namespace = console)]
     fn log(s: &str);
 }
