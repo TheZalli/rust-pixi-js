@@ -1,6 +1,4 @@
-# wasm-bindgen-hello
-A simple project template made after the [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen) tutorial.
-
+# rust-pixi-js
 Requires the nightly Rust toolset, wasm-bindgen and npm.
 
 `build.sh` and `clean.sh` scripts build and clean the project.
