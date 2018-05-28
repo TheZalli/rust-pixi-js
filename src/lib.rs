@@ -4,6 +4,21 @@ extern crate wasm_bindgen;
 
 use wasm_bindgen::prelude::*;
 
+#[wasm_bindgen(module = "./../js/pixi.min.js")]
+extern {
+    pub type Container;
+
+    #[wasm_bindgen(method, getter)]
+    fn x(this: &Container) -> i32;
+    #[wasm_bindgen(method, getter)]
+    fn y(this: &Container) -> i32;
+
+    #[wasm_bindgen(method, setter)]
+    fn set_x(this: &Container, x: i32);
+    #[wasm_bindgen(method, setter)]
+    fn set_y(this: &Container, x: i32);
+}
+
 #[wasm_bindgen]
 extern {
     type HTMLDocument;
@@ -28,8 +43,15 @@ extern {
 }
 
 #[wasm_bindgen]
-pub fn greet(name: &str) {
-    log(&format!("Hello, {}!", name));
+pub fn relocate(cont: &Container, x: i32, y: i32) {
+    log(&format!("{}, {}", x, y));
+    cont.set_x(x);
+    cont.set_y(y);
+}
+
+#[wasm_bindgen]
+pub fn print(msg: &str) {
+    log(msg);
 }
 
 #[wasm_bindgen]
